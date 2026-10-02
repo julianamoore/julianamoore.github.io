@@ -1,0 +1,145 @@
+.skills__grid {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.skills__grid > * {
+  height: 100%;
+}
+
+.skills__card {
+  height: 100%;
+  padding: clamp(1.4rem, 3vw, 1.9rem);
+}
+
+.skills__card-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.skills__num {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--pink-500);
+  padding-top: 0.42rem;
+}
+
+.skills__card-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.62rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.skills__card-caption {
+  font-size: 0.8rem;
+  color: var(--paper-faint);
+  margin-top: 0.2rem;
+}
+
+.skills__items {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.skills__items li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.95rem;
+  color: var(--paper-dim);
+  transition: color 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+}
+
+.skills__items li:hover {
+  color: var(--paper);
+  transform: translateX(3px);
+}
+
+.skills__dot {
+  width: 0.3rem;
+  height: 0.3rem;
+  flex: none;
+  border-radius: 50%;
+  background: var(--pink-500);
+  box-shadow: 0 0 0 3px rgba(255, 61, 147, 0.12);
+  transition: box-shadow 0.3s var(--ease-out);
+}
+
+.skills__items li:hover .skills__dot {
+  box-shadow: 0 0 0 4px rgba(255, 61, 147, 0.2);
+}
+
+/* -------------------------------------------------------------- marquee -- */
+
+.skills__marquee {
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+  padding-block: 1.15rem;
+  border-block: 1px solid var(--line);
+  background: linear-gradient(90deg, rgba(255, 61, 147, 0.05), transparent 45%, rgba(154, 77, 255, 0.05));
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.skills__track {
+  display: flex;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+}
+
+.skills__marquee:hover .skills__track {
+  animation-play-state: paused;
+}
+
+.skills__track ul {
+  display: flex;
+  align-items: center;
+}
+
+.skills__track li {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  padding-right: 1.6rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 0.95rem + 0.7vw, 1.6rem);
+  letter-spacing: -0.015em;
+  color: var(--paper-dim);
+  white-space: nowrap;
+}
+
+.skills__track li span {
+  font-size: 0.55em;
+  color: var(--pink-500);
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills__track {
+    animation: none;
+  }
+}
+
+@media (min-width: 720px) {
+  .skills__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1040px) {
+  .skills__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

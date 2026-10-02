@@ -1,0 +1,110 @@
+.work__list {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.work__list > li {
+  height: 100%;
+}
+
+.work__card {
+  display: block;
+  height: 100%;
+  padding: clamp(1.5rem, 3vw, 2.1rem);
+}
+
+.work__head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.1rem;
+}
+
+.work__kind {
+  padding: 0.22rem 0.7rem;
+  border-radius: 999px;
+  background: linear-gradient(100deg, rgba(255, 61, 147, 0.22), rgba(154, 77, 255, 0.14));
+  border: 1px solid rgba(255, 61, 147, 0.34);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  color: var(--pink-100);
+}
+
+.work__org {
+  font-family: var(--font-mono);
+  font-size: 0.63rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--paper-faint);
+}
+
+.work__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 1.2rem + 1.1vw, 2.05rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.85rem;
+}
+
+.work__blurb {
+  color: var(--paper-dim);
+  font-size: 0.97rem;
+  margin-bottom: 1.3rem;
+  max-width: 54ch;
+}
+
+/* ------------------------------------------------------------ next card -- */
+
+.work__card--next {
+  display: grid;
+  align-items: center;
+  border-style: dashed;
+  background: rgba(255, 255, 255, 0.012);
+}
+
+.work__next-inner {
+  display: grid;
+  gap: 0.2rem;
+  justify-items: start;
+}
+
+.work__next-ico {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-bottom: 0.9rem;
+  color: var(--pink-300);
+}
+
+.work__next-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--pink-300);
+}
+
+.work__card--next:hover .btn-arrow,
+.work__card--next:focus-visible .btn-arrow {
+  transform: translate(3px, -3px);
+}
+
+.work__next-cta .btn-ico {
+  transition: transform 0.35s var(--ease-out);
+}
+
+@media (min-width: 780px) {
+  .work__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .work__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
